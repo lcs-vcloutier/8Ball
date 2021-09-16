@@ -9,10 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Used to select a random value from the array
     @State private var arrayNum = 0
+    
+    // Used to show the alert
     @State private var showingAlert = false
+    
+    // Used to set the alert message
     @State private var alertMSG = ""
+    
+    // Used to allow the user to type a question and to check if text field is empty
     @State private var question: String = ""
+    
+    // Used to set possible 8 ball replies
     var answers = ["It is certain", "It is decidedly so", "Without a doubt", "Yes, definitely", "You may rely on it", "As I see it, yes", "Most likely", "Outlook good", "Yes", "Signs point to yes", "Reply hazy try again", "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", "Don't count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful"]
 
     var body: some View {
@@ -49,6 +58,9 @@ struct ContentView: View {
         }
     }
     func submit() {
+        
+        // Check if qestion is empty then randomizes number then displays alert.
+
         if !question.isEmpty {
 
         arrayNum = Int.random(in: 0...19)
