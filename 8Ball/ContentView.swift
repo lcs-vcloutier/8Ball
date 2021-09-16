@@ -49,8 +49,15 @@ struct ContentView: View {
         }
     }
     func submit() {
+        if !question.isEmpty {
+
         arrayNum = Int.random(in: 0...19)
         self.showingAlert = true
         alertMSG = answers[arrayNum]
+        }
+        else {
+            self.showingAlert = true
+            alertMSG = "Please enter a question"
+        }
     }
 }
